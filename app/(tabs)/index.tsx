@@ -5,6 +5,7 @@ import useFetch from "@/services/useFetch";
 import { useRouter } from "expo-router";
 import { ActivityIndicator, FlatList, Image, ScrollView, Text, View } from "react-native";
 import SearchBar from "../components/SearchBar";
+import MovieCard from "../components/MovieCard";
 
 export default function Index() {
 
@@ -37,7 +38,7 @@ export default function Index() {
                 data={movies}
                 keyExtractor={(item) => item.title}
                 renderItem={({item}) => (
-                  <Text className="text-white text-sm">{item.title}</Text>
+                  <MovieCard {... item} />
                 )}
                 numColumns={3}
                 columnWrapperStyle={{
